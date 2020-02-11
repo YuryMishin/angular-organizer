@@ -35,8 +35,8 @@ export class TasksService {
   load(date: moment.Moment): Observable<ITask[]> {
     return this.http.get<ITask[]>(`${TasksService.url}/${date.format('DD-MM-YYYY')}.json`)
       .pipe(map(tasks => {
-        if (!tasks) return [];
-        return Object.keys(tasks).map(key => ({...tasks[key], id: key}))
+        if (!tasks) {return []; }
+        return Object.keys(tasks).map(key => ({...tasks[key], id: key}));
       }));
   }
 
