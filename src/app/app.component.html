@@ -1,13 +1,44 @@
-<div class="container">
-  <header>
-    <app-selector></app-selector>
+<!--<div class="container">-->
+<!--  <header>-->
+<!--    <app-selector></app-selector>-->
+<!--  </header>-->
+
+<!--  <main>-->
+<!--    <app-calendar></app-calendar>-->
+<!--  </main>-->
+
+<!--  <div>-->
+<!--    <app-organizer></app-organizer>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="main-container">
+  <header class="header-6">
+    <div class="branding">
+      <a href="..." class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Hacker news organizer</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a href="..." class="active nav-link"><span class="nav-text">Dashboard</span></a>
+      <a href="..." class="nav-link"><span class="nav-text">Interactive Analytics</span></a>
+    </div>
+    <div class="header-actions">
+      <a href="..." class="nav-link nav-icon" aria-label="settings">
+        <clr-icon shape="cog"></clr-icon>
+      </a>
+    </div>
   </header>
-
-  <main>
-    <app-calendar></app-calendar>
-  </main>
-
-  <div>
-    <app-organizer></app-organizer>
+<!--  <nav class="subnav">-->
+<!--    .123-->
+<!--  </nav>-->
+  <div class="content-container">
+    <div class="background-image"></div>
+    <div class="content-area news__container">
+      <app-news-list></app-news-list>
+    </div>
+<!--    <nav class="sidenav">-->
+<!--      ...890-->
+<!--    </nav>-->
   </div>
 </div>

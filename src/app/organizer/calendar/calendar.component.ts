@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import {DateService} from '../core/services/date.service';
+import {DateService} from '../../core/services/date.service';
 import {valueReferenceToExpression} from '@angular/compiler-cli/src/ngtsc/annotations/src/util';
 
 interface Day {
