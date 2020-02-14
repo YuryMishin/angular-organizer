@@ -15,7 +15,8 @@ import {SharedModule} from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-  ]
+  ],
+  exports: [OrganizerComponent],
 })
 export class OrganizerModule {
 }

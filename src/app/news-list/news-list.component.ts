@@ -12,6 +12,7 @@ export class NewsListComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   news: IApiHit[];
+  isCalendarOpen = false;
 
   ngOnInit() {
     this.newsService.getNews().subscribe(value => {

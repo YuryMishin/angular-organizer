@@ -1,32 +1,50 @@
 <div class="clr-row" style="margin: 0 70px;">
   <ng-container *ngFor="let newsItem of news; let i=index">
     <div class="clr-col-lg-4 clr-col-12">
-      <a href="{{newsItem.story_url}}" class="card clickable">
+      <a class="card clickable">
         <div class="card-block">
           <p class="card-title">
             {{newsItem.story_title ? newsItem.story_title : newsItem.title}}
           </p>
         </div>
-        <div class="card-img" style="background: lightgray; min-height: 170px; min-width: 270px; transition: all 3s ease-in-out">
+        <div class="card-img img__ctn">
           <img src="{{'https://picsum.photos/700/300?image=' + (i + 4)}}" alt="image"/>
         </div>
         <div class="card-block">
-          <div class="card-media-block">
+          <div class="card-media-block clr-flex-items-lg-between">
 
 
             <div class="card-media-description">
-                        <span class="card-media-title">
-                           Author {{newsItem.author}}
-                        </span>
+              <span class="card-media-title">Author {{newsItem.author}}</span>
               <span class="card-media-text">
-                           {{newsItem.created_at | date: 'shortDate'}}
+                {{newsItem.created_at | date: 'shortDate'}}
               </span>
+            </div>
+
+            <div>
+              <button class="btn btn-primary-outline" (click)="isCalendarOpen = !isCalendarOpen">Read later</button>
+              <button class="btn btn-success">Open</button>
+<!--              href="{{newsItem.story_url}}"-->
             </div>
           </div>
         </div>
+
+
       </a>
     </div>
   </ng-container>
 
 
 </div>
+
+
+<!--<clr-modal [(clrModalOpen)]="isCalendarOpen">-->
+<!--  <h3 class="modal-title">I have a nice title</h3>-->
+<!--  <div class="modal-body">-->
+<!--    &lt;!&ndash;      <app-organizer></app-organizer>&ndash;&gt;-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-outline" (click)="isCalendarOpen = false">Cancel</button>-->
+<!--    <button type="button" class="btn btn-primary" (click)="isCalendarOpen = false">Ok</button>-->
+<!--  </div>-->
+<!--</clr-modal>-->
