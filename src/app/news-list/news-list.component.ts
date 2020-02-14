@@ -15,14 +15,20 @@ export class NewsListComponent implements OnInit {
 
   news: IApiHit[];
 
+  imgUrl = 'https://picsum.photos/seed/picsum/400/200';
+
   ngOnInit() {
     this.newsService.getNews().subscribe(value => {
       console.log('NEW: ', value);
       this.news = value.hits;
     });
-    // this.imageService.getImage('angular app').subscribe(value => {
+    // this.imageService.getImage('development').subscribe(value => {
     //   console.log('IMAGE,: ', value);
     // });
+  }
+
+  getImgUrl() {
+    return 'https://picsum.photos/seed/picsum/400/200';
   }
 
 }

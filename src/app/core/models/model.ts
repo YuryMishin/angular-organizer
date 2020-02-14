@@ -59,12 +59,12 @@ export interface IApiImages {
   images_count: number;
   in_gallery: boolean;
   is_ad: boolean;
-  tags: ITag [];
+  tags: any;
   ad_type: number;
   ad_url: string;
   in_most_viral: boolean;
   include_album_ads: boolean;
-  images: IImage[];
+  images: any;
   ad_config: {
     safeFlags: string[];
     highRiskFlags: any;
@@ -75,7 +75,66 @@ export interface IApiImages {
 }
 
 
-export interface IImage {
+export interface IApiDataImg {
+  name: string;
+  display_name: string;
+  followers: any;
+  total_items: any;
+  following: any;
+  is_whitelisted: any;
+  background_hash: string;
+  thumbnail_hash: any;
+  accent: string;
+  background_is_animated: any;
+  thumbnail_is_animated: any;
+  is_promoted: any;
+  description: string;
+  logo_hash: any;
+  logo_destination_url: any;
+  description_annotations: any;
+  items: IApiImgItems[];
+}
+
+export interface IApiImgItems {
+  id: any;
+  title: any;
+  description: any;
+  datetime: any;
+  cover: any;
+  cover_width: any;
+  cover_height: any;
+  account_url: any;
+  account_id: any;
+  privacy: any;
+  layout: any;
+  views: any;
+  link: any;
+  ups: any;
+  downs: any;
+  points: any;
+  score: any;
+  is_album: any;
+  vote: any;
+  favorite: any;
+  nsfw: any;
+  section: any;
+  comment_count: any;
+  favorite_count: any;
+  topic: any;
+  topic_id: any;
+  images_count: any;
+  in_gallery: any;
+  is_ad: any;
+  tags: any;
+  ad_type: any;
+  ad_url: any;
+  in_most_viral: any;
+  include_album_ads: any;
+  images: Image[];
+  ad_config: any;
+}
+
+export interface Image {
   id: string;
   title: any;
   description: string;
@@ -108,23 +167,4 @@ export interface IImage {
   downs: any;
   points: any;
   score: any;
-}
-
-export interface ITag {
-  name: string;
-  display_name: string;
-  followers: number;
-  total_items: number;
-  following: boolean;
-  is_whitelisted: boolean;
-  background_hash: string;
-  thumbnail_hash: string;
-  accent: number;
-  background_is_animated: boolean;
-  thumbnail_is_animated: boolean;
-  is_promoted: boolean;
-  description: string;
-  logo_hash: string;
-  logo_destination_url: string;
-  description_annotations: any;
 }

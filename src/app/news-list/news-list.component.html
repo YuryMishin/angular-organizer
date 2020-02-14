@@ -1,14 +1,28 @@
-<div class="clr-row">
-  <ng-container *ngFor="let newsItem of news;">
+<div class="clr-row" style="margin: 0 70px;">
+  <ng-container *ngFor="let newsItem of news; let i=index">
     <div class="clr-col-lg-4 clr-col-12">
-      <a href="..." class="card clickable">
-        <div class="card-img" style="width: 50px; height: 70px; background: #dc3545">
-<!--          <img src="..." alt="..." />-->
+      <a href="{{newsItem.story_url}}" class="card clickable">
+        <div class="card-block">
+          <p class="card-title">
+            {{newsItem.story_title ? newsItem.story_title : newsItem.title}}
+          </p>
+        </div>
+        <div class="card-img" style="background: lightgray; min-height: 170px; min-width: 270px; transition: all 3s ease-in-out">
+          <img src="{{'https://picsum.photos/700/300?image=' + (i + 4)}}" alt="image"/>
         </div>
         <div class="card-block">
-          <p class="card-text">
-            {{newsItem.title}}
-          </p>
+          <div class="card-media-block">
+
+
+            <div class="card-media-description">
+                        <span class="card-media-title">
+                           Author {{newsItem.author}}
+                        </span>
+              <span class="card-media-text">
+                           {{newsItem.created_at | date: 'shortDate'}}
+              </span>
+            </div>
+          </div>
         </div>
       </a>
     </div>
