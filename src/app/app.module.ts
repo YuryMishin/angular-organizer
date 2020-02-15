@@ -8,6 +8,7 @@ import {NewsListComponent} from './news-list/news-list.component';
 import {OrganizerModule} from './organizer/organizer.module';
 import {SharedModule} from './shared/shared.module';
 import {HttpAuthInterceptor} from './core/intercepter/http.interceptor';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {HttpAuthInterceptor} from './core/intercepter/http.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ClarityModule,
 

@@ -1,3 +1,11 @@
+<header>
+  <app-selector></app-selector>
+</header>
+
+<main>
+  <app-calendar></app-calendar>
+</main>
+
 <section>
   <header>
     Organizer: <strong>{{dateService.date | async | moment: 'DD.MM.YYYY'}}</strong>
@@ -25,7 +33,7 @@
 
   <footer>
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <input type="text" formControlName="title">
+      <input type="text" formControlName="title" placeholder="Add task...">
       <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Add task</button>
     </form>
   </footer>

@@ -38,13 +38,13 @@
 </div>
 
 
-<!--<clr-modal [(clrModalOpen)]="isCalendarOpen">-->
-<!--  <h3 class="modal-title">I have a nice title</h3>-->
-<!--  <div class="modal-body">-->
-<!--    &lt;!&ndash;      <app-organizer></app-organizer>&ndash;&gt;-->
-<!--  </div>-->
-<!--  <div class="modal-footer">-->
-<!--    <button type="button" class="btn btn-outline" (click)="isCalendarOpen = false">Cancel</button>-->
-<!--    <button type="button" class="btn btn-primary" (click)="isCalendarOpen = false">Ok</button>-->
-<!--  </div>-->
-<!--</clr-modal>-->
+<clr-modal [(clrModalOpen)]="isCalendarOpen" [clrModalSize]="'lg'">
+  <h3 class="modal-title">I have a nice title</h3>
+  <div class="modal-body">
+          <app-organizer></app-organizer>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="isCalendarOpen = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="isCalendarOpen = false">Ok</button>
+  </div>
+</clr-modal>
