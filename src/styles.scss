@@ -90,5 +90,10 @@ table tn {
   text-align: center;
 }
 
+::ng-deep clr-modal > .modal-backdrop {
+  background: #7c7c7c1c !important;
+  opacity: .1 !important;
+}
+
 
 

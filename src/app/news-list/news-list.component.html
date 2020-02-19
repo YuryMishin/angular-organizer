@@ -22,7 +22,7 @@
             </div>
 
             <div>
-              <button class="btn btn-primary-outline" (click)="isCalendarOpen = !isCalendarOpen">Read later</button>
+              <button class="btn btn-primary-outline" (click)="openModal(newsItem)">Read later</button>
               <button class="btn btn-success">Open</button>
 <!--              href="{{newsItem.story_url}}"-->
             </div>
@@ -32,6 +32,9 @@
 
       </a>
     </div>
+
+
+
   </ng-container>
 
 
@@ -39,12 +42,14 @@
 
 
 <clr-modal [(clrModalOpen)]="isCalendarOpen" [clrModalSize]="'lg'">
-  <h3 class="modal-title">I have a nice title</h3>
+  <h3 class="modal-title">Select date</h3>
   <div class="modal-body">
-          <app-organizer></app-organizer>
+    <app-organizer [article]="selectedArticle"></app-organizer>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline" (click)="isCalendarOpen = false">Cancel</button>
     <button type="button" class="btn btn-primary" (click)="isCalendarOpen = false">Ok</button>
   </div>
 </clr-modal>
+
+

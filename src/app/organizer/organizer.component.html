@@ -1,4 +1,4 @@
-<header>
+<header class="clr-flex-items-lg-center">
   <app-selector></app-selector>
 </header>
 
@@ -7,11 +7,6 @@
 </main>
 
 <section>
-  <header>
-    Organizer: <strong>{{dateService.date | async | moment: 'DD.MM.YYYY'}}</strong>
-    <hr />
-  </header>
-
 
   <main>
     <ul *ngIf="tasks.length; else noTasks">
@@ -31,9 +26,9 @@
     </ng-template>
   </main>
 
-  <footer>
+  <footer *ngIf="form">
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <input type="text" formControlName="title" placeholder="Add task...">
+      <input type="text" formControlName="title" placeholder="Read: {{article?.title ? article?.title : article?.story_title}}">
       <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Add task</button>
     </form>
   </footer>

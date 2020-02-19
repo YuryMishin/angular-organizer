@@ -13,11 +13,20 @@ export class NewsListComponent implements OnInit {
 
   news: IApiHit[];
   isCalendarOpen = false;
+  selectedArticle = {} as IApiHit;
 
   ngOnInit() {
     this.newsService.getNews().subscribe(value => {
       this.news = value.hits;
     });
+  }
+
+  openModal(article) {
+    console.log('article: ', article);
+    this.selectedArticle = article;
+    setTimeout(() => {
+      this.isCalendarOpen = !this.isCalendarOpen;
+    }, 40);
   }
 
 }
