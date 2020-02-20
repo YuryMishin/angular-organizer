@@ -10,7 +10,6 @@ import {IApiHit} from '../core/models/model';
   selector: 'app-organizer',
   templateUrl: './organizer.component.html',
   styleUrls: ['./organizer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
 })
 export class OrganizerComponent implements OnInit {
 
@@ -75,7 +74,6 @@ export class OrganizerComponent implements OnInit {
   openArticle(task) {
     task.isRead = true;
     this.tasksService.update(task).subscribe(res => {
-      console.log('RES UPDATE: ', res);
     });
     location.href = task.url;
   }
