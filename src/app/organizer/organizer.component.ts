@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {DateService} from '../core/services/date.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ITask, TasksService} from '../core/services/tasks.service';
@@ -63,7 +63,6 @@ export class OrganizerComponent implements OnInit {
     this.tasksService.create(task).subscribe(qtask => {
       this.tasks.push(task);
       this.form.get('title').setValue('');
-      console.log('create TAsk: ', task);
     }, err => console.log('Error FB: ', err));
   }
 

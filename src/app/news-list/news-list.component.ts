@@ -22,7 +22,6 @@ export class NewsListComponent implements OnInit {
   }
 
   openModal(article) {
-    console.log('article: ', article);
     this.selectedArticle = article;
     setTimeout(() => {
       this.isCalendarOpen = true;
