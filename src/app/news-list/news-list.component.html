@@ -24,7 +24,6 @@
             <div>
               <button class="btn btn-primary-outline" (click)="openModal(newsItem)">Read later</button>
               <button class="btn btn-success">Open</button>
-<!--              href="{{newsItem.story_url}}"-->
             </div>
           </div>
         </div>
@@ -33,17 +32,15 @@
       </a>
     </div>
 
-
-
   </ng-container>
 
 
 </div>
 
 
-<clr-modal [(clrModalOpen)]="isCalendarOpen" [clrModalSize]="'lg'">
+<clr-modal [(clrModalOpen)]="isCalendarOpen && !!selectedArticle" [clrModalSize]="'lg'">
   <h3 class="modal-title">Select date</h3>
-  <div class="modal-body">
+  <div class="modal-body" *ngIf="selectedArticle">
     <app-organizer [article]="selectedArticle"></app-organizer>
   </div>
   <div class="modal-footer">

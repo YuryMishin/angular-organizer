@@ -9,6 +9,7 @@ import {OrganizerModule} from './organizer/organizer.module';
 import {SharedModule} from './shared/shared.module';
 import {HttpAuthInterceptor} from './core/intercepter/http.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [

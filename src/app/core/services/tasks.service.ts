@@ -7,6 +7,8 @@ import * as moment from 'moment';
 
 export interface ITask {
   title: string;
+  url: string;
+  isRead: boolean;
   id?: string;
   date?: string;
 }
@@ -30,6 +32,10 @@ export class TasksService {
       .pipe(map(res => {
         return {...task, id: res.name};
       }));
+  }
+
+  update(task: ITask): Observable<any> {
+    return this.http.put(`${TasksService.url}/${task.date}/${task.id}.json`, task);
   }
 
   load(date: moment.Moment): Observable<ITask[]> {

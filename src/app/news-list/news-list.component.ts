@@ -25,7 +25,7 @@ export class NewsListComponent implements OnInit {
     console.log('article: ', article);
     this.selectedArticle = article;
     setTimeout(() => {
-      this.isCalendarOpen = !this.isCalendarOpen;
+      this.isCalendarOpen = true;
     }, 40);
   }
 

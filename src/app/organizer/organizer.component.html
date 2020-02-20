@@ -10,12 +10,16 @@
 
   <main>
     <ul *ngIf="tasks.length; else noTasks">
-      <li class="task" *ngFor="let task of tasks; let i = index">
+      <li class="task" *ngFor="let task of tasks; let i = index" [class.read-task]="task.isRead">
         <span>
           <strong>{{i + 1}}</strong>
           {{task.title}}
         </span>
-        <button class="btn btn-primary" (click)="remove(task)">Remove</button>
+        <div>
+          <button class="btn btn-primary" (click)="remove(task)">Remove</button>
+          <button class="btn btn-primary" *ngIf="!task.isRead" (click)="openArticle(task)">Read</button>
+        </div>
+
       </li>
     </ul>
 
@@ -28,7 +32,7 @@
 
   <footer *ngIf="form">
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <input type="text" formControlName="title" placeholder="Read: {{article?.title ? article?.title : article?.story_title}}">
+      <input type="text" formControlName="title">
       <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Add task</button>
     </form>
   </footer>
